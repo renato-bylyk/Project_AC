@@ -1,0 +1,6 @@
+The reason i am using the esp8266 with the arduino is because i only had the esp8266-01 version and i needed the analog in from the arduino.
+
+
+I had two subscribes:
+ #1 for for the AC status ( on/off ).
+ #2 for the the AC control ( + humidity & temperature ).
