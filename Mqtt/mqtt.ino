@@ -9,8 +9,8 @@
 #define WLAN_PASS  "Your password"
 
 
-#define arduino_status "arduino/ac/status"                                       // STATUS  subscribe/publish
-#define arduino_status_response "arduino/ac/status/response"                     //
+#define arduino_status " "                                       // STATUS  subscribe/publish
+#define arduino_status_response " "                     //
 
 
 #define arduino_pubsub " "       //   Arduino  subscribe/publish
