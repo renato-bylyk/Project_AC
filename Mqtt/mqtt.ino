@@ -5,19 +5,19 @@
 #include <SoftwareSerial.h>
 
 
-#define WLAN_SSID  "Ren"
-#define WLAN_PASS  "ewpsoldiermx9pua6j"
+#define WLAN_SSID  "Your ssid"
+#define WLAN_PASS  "Your password"
 
 
 #define arduino_status "arduino/ac/status"                                       // STATUS  subscribe/publish
 #define arduino_status_response "arduino/ac/status/response"                     //
 
 
-#define arduino_pubsub "arduino/ac/enpet/publish_grafeio"                        //
-#define arduino_response "arduino/ac/enpet/publish_grafeio/response"             //
-#define arduino_temp "arduino/ac/enpet/publish_grafeio/response/dht_temp"        // Enpet  publish/subscribe
-#define arduino_hum "arduino/ac/enpet/publish_grafeio/response/dht_hum"          //
-#define arduino_watt "arduino/ac/enpet/publish_grafeio/response/watt"            //
+#define arduino_pubsub " "       //   Arduino  subscribe/publish
+#define arduino_response " "     //
+#define arduino_temp " "         //  
+#define arduino_hum " "          //
+#define arduino_watt " "         //
 
 #define MQTT_SERVER "test.mosca.io"                                            // MQTT Server
 #define mqtt_port  1883
