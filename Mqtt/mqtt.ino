@@ -1,8 +1,7 @@
 #include <ESP8266WiFi.h>
-#include <DHT.h>
-#include "Adafruit_MQTT.h"
-#include "Adafruit_MQTT_Client.h"
-#include <SoftwareSerial.h>
+#include <DHT.h>                               //  Humidity & Temperature sensor library
+#include "Adafruit_MQTT.h"                     // 
+#include "Adafruit_MQTT_Client.h"              // Mqtt library from adafruit
 
 
 #define WLAN_SSID  "Your ssid"
@@ -33,7 +32,7 @@ Adafruit_MQTT_Subscribe statusreport = Adafruit_MQTT_Subscribe(&mqtt, arduino_st
 
 
 void MQTT_connect();
-DHT dht(2  , DHT11, 15);
+DHT dht(2  , DHT11, 15);                   // pin 2 on esp8266-01 (GPIO2)
 boolean gotMessage = false;
 uint32_t x = 0;
 char c;
