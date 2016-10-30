@@ -33,10 +33,8 @@ Adafruit_MQTT_Subscribe statusreport = Adafruit_MQTT_Subscribe(&mqtt, arduino_st
 
 void MQTT_connect();
 DHT dht(2  , DHT11, 15);                   // pin 2 on esp8266-01 (GPIO2)
-boolean gotMessage = false;
-uint32_t x = 0;
-char c;
-int i, isConnected = 0;
+char c;                                    // for the messages from the arduino
+int i, isConnected = 0;                    
 
 
 void setup() {
