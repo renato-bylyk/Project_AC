@@ -40,7 +40,7 @@ int i, isConnected = 0;
 void setup() {
   Serial.begin(115200);
   delay(10);
-  dht.begin();
+  dht.begin();                 // sensor start 
   WiFi.begin(WLAN_SSID, WLAN_PASS);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
@@ -53,21 +53,24 @@ void setup() {
 
 // LOOP ----------------
 void loop() {
+  
+  
   if (!mqtt.connected()) {
-    MQTT_connect();
+    MQTT_connect();               // keep connection alive
   }
+  
   Adafruit_MQTT_Subscribe *subscription;
-  while ((subscription = mqtt.readSubscription(3000))) {
-    if (subscription == &onoffbutton) {
+  while ((subscription = mqtt.readSubscription(3000))) {             // check if you have message from subscriptions
+    if (subscription == &onoffbutton) {                              // check if message is from room control
       if (strcmp((char *)onoffbutton.lastread, "connect") == 0) {
         isConnected = 1;
         mqtt.publish(arduino_response, "connected", 1);
       } else if (strcmp((char *)onoffbutton.lastread, "disconnect") == 0) {
         isConnected = 0;
-      } else if (strcmp((char *)onoffbutton.lastread, "AC1") == 0) {
-        Serial.print("AC1");
+      } else if (strcmp((char *)onoffbutton.lastread, "AC1") == 0) {     
+        Serial.print("AC1");                      // sent ac1 to the arduino 
         delay(50);
-        calcWatt(1);
+        calcWatt(1);                              // update the watt on site
       } else if (strcmp((char *)onoffbutton.lastread, "AC0") == 0) {
         Serial.print("AC0");
         delay(50);
@@ -77,9 +80,9 @@ void loop() {
         mqtt.publish(arduino_response, "done", 1);
       }
     }
-    if (subscription == &statusreport) {
+    if (subscription == &statusreport) {                             // check if message is from index page   
       if (strcmp((char *)statusreport.lastread, "statusreport") == 0) {
-        calcWatt(4);
+        calcWatt(4);                                                 // inform the watt value
       }
     }
   }
