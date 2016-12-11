@@ -4,8 +4,8 @@
 #include "Adafruit_MQTT_Client.h"
 
 
-#define WLAN_SSID  "Ren"
-#define WLAN_PASS  "ewpsoldiermx9pua6j"
+#define WLAN_SSID  ""
+#define WLAN_PASS  ""
 
 #define arduino_pubsub " #1 SUBSCRIPTION"         //
 #define arduino_response " #1 RESPONSE"           //
