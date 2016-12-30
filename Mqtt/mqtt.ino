@@ -23,6 +23,7 @@ WiFiClient client;
 DHT dht(2  , DHT11, 15);
 
 
+int doReset =0;
 const char* host = "";
 String urlon = "STRING FOR ON";
 String urloff = "STRING FOR OFF";
@@ -35,7 +36,6 @@ char c;
 Adafruit_MQTT_Client mqtt(&client, MQTT_SERVER, mqtt_port );
 /****************************** Feeds ***************************************/
 Adafruit_MQTT_Subscribe onoffbutton = Adafruit_MQTT_Subscribe(&mqtt, arduino_pubsub, 1);
-//Adafruit_MQTT_Subscribe statusreport = Adafruit_MQTT_Subscribe(&mqtt, arduino_status, 1);
 /*************************** Sketch Code ************************************/
 
 
@@ -93,6 +93,10 @@ void loop() {
     Serial.println("Success");
     previousMillis = currentMillis;
     calcWatt(4);
+    if(doReset>=50){
+        doReset=0;
+        Serial.println("Reset");
+    }
   }
 }
 
