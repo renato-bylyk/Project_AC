@@ -10,7 +10,7 @@ char c;
 boolean gotMessage = false;
 String message;
 int temp_value = 19, mode_value = 2, fanspeed_value = 0, swing_value = 0, ac_value ;
-char AC[1], TP[1], MD[1], SM[1], FS[1];
+char AC[2], TP[2], MD[2], SM[2], FS[2];
 
 void setup() {
 
@@ -58,6 +58,19 @@ void loop() {
         TP[1] = message[3];
         temp_value = atoi(TP);
         break;
+       case 'W':
+        Irms = emon1.calcIrms(1480);
+        if (Irms > 1500) {
+          esp12.print("700");
+        } else {
+          esp12.print((Irms * 230) - 30);
+        }
+        gotMessage = false;
+        break;
+      case 'R':
+        digitalWrite(13, HIGH);
+        digitalWrite(13, LOW);
+        gotMessage = false;
       default :
         gotMessage=false;
         }
