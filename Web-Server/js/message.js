@@ -9,7 +9,7 @@ client.onConnectionLost = function (responseObject) {
 //Gets called whenever you receive a message for your subscriptions
 function connectRoom(site_publish, callback) {
     client.onMessageArrived = function (message) {
-       // Your CALL BACK MESSAGE
+       // Your CALL BACK MESSAGE - FUNCTION
     };
 }
 
