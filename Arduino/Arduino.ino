@@ -3,7 +3,7 @@
 #include <MideaHeatpumpIR.h>
 
 SoftwareSerial esp12(4, 5); //RX,TX
-IRSenderPWM irSender(3);
+IRSenderPWM irSender(8);
 HeatpumpIR *heatpumpIR = new MideaHeatpumpIR();
 
 char c;
