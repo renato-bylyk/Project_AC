@@ -7,5 +7,3 @@ With the mqtt protocol i subscribe in the fields i wait for the messages to arri
 #2 arduino - dht11 - sct013-000 :
 
 If a message arrives , i check what the message was and then respond with the answer + send the command it was asked to the AC and judging by the power consumption we can estimate if the command was received or not.
-
-#3
