@@ -83,6 +83,7 @@ void loop() {
     }
   }
 
+ A change
   // ping the server to keep the mqtt connection alive
   if (! mqtt.ping()) {
     mqtt.disconnect();
