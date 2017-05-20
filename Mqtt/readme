@@ -4,3 +4,4 @@ The reason i am using the esp8266 with the arduino is because i only had the esp
 I had two subscribes:
  #1 for for the AC status ( on/off ).
  #2 for the the AC control ( + humidity & temperature ).
+ #3
