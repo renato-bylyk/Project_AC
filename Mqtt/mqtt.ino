@@ -28,7 +28,7 @@ const char* host = "";
 String urlon = "STRING FOR ON";
 String urloff = "STRING FOR OFF";
 long previousMillis = 0;
-long interval = 60000*5;   // 5 minutes delay 
+long interval = 60000*5;   // 5 minutes delay
 boolean gotMessage = false;
 char c;
 
@@ -137,7 +137,7 @@ void calcWatt(int mode) {
     mqtt.publish(arduino_response, "done", 1);
   } else if (atof(message) >= 120 && mode == 4) {                                     //
     client.connect(host, 80);                                                         //
-    client.print(String("GET ") + urlon + " HTTP/1.1\r\n" +                           //                    
+    client.print(String("GET ") + urlon + " HTTP/1.1\r\n" +                           //
                "Host: " + host + "\r\n" +                                             //
                "Connection: close\r\n\r\n");                                          //
   } else if (atof(message) < 120 && mode == 4) {                                      //  UPDATE THE DATABASE SO WE CAN CHECK WHICH AC
@@ -150,7 +150,7 @@ void calcWatt(int mode) {
     delay(10);
     mqtt.publish(arduino_watt, message, 1);
   }
-   
+
 }
 
 // Function to connect and reconnect as necessary to the MQTT server.
